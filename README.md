@@ -1,23 +1,20 @@
 # api-exception
 
 ApiException should be used by applications to throw a custom exception based on a dictionary of application errors.
-It holds exception data that application should manage to build the response. 
-
-You can generate ApiException anywhere:
-  
+It holds exception data that application should manage to build the response.   
  
 # How to use it
     
     //At some point in the begining
-    \ApiException::set_error_dictionary($app_errors_dictionary);
+    \GsiTools\ApiException::setErrorDictionary($app_errors_dictionary);
     
     try
     {
       
         //Take a look to constructor parameters to see more details
-        throw new ApiException(409, 409001, null, 'user', ['Location' => 'https://site.com/api/v1/users/435']);
+        throw new \GsiTools\ApiException(409, 409001, null, 'user', ['Location' => 'https://site.com/api/v1/users/435']);
     }
-    catch (ApiException $api_exc)
+    catch (\GsiTools\ApiException $api_exc)
     {
         //build and send: a response using the ApiException data (HTTP status, message, error code, headers, etc.)
     }
@@ -36,3 +33,21 @@ The `$app_errors_dictionary` could be something like this:
     ]
     
 Note that message can hold placeholders to be replaced by `$messageArgs` (4th parameter) in constructor.
+
+# How to install
+
+Add a new repository in your composer.json file as follow:
+
+    {
+        "type": "vcs",
+        "url": "https://github.com/generalsoftwareinc/api-exception"
+    }
+
+Also add this line into `require` section in composer.json file:
+
+    "generalsoftwareinc/api-exception": "0.1.*"
+    
+Finally execute:
+
+    composer update generalsoftwareinc/api-exception
+
