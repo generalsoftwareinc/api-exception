@@ -9,7 +9,7 @@ class ApiException extends Exception {
     private $headers;
 
     /**
-     * @param array $error_dictionary   Custom application errors dictionary. Example:
+     * @param array $errors_dictionary   Custom application errors dictionary. Example:
      *                                  [
      *                                      401001 => 'Invalid token: %s',
      *                                      400100 => "The property '%s' is required.",
@@ -27,7 +27,7 @@ class ApiException extends Exception {
     /**
      * 
      * @param int $http_status       HTTP status code. Default value: 500 (Internal Server Error).
-     * @param int $errorCode        Custom application error code
+     * @param int $error_code        Custom application error code
      * @param string $message       Exception message. If no value ('' or null) but $errorCode, the message will be
      *                              searched in self::$error_dictionary.
      * @param mixed $message_args   Array with arguments to replace message placeholder (%s, %d) using vsprintf().
