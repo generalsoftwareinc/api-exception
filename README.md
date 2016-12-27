@@ -17,7 +17,7 @@ You can generate ApiException anywhere:
         //Take a look to constructor parameters to see more details
         throw new ApiException(409, 409001, null, 'user', ['Location' => 'https://site.com/api/v1/users/435']);
     }
-    catch (ApiException $exc)
+    catch (ApiException $api_exc)
     {
         //build and send: a response using the ApiException data (HTTP status, message, error code, headers, etc.)
     }
