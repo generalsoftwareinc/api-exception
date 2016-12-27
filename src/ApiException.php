@@ -2,7 +2,7 @@
 
 namespace GsiTools;
 
-class ApiException extends Exception {
+class ApiException extends \Exception {
 
     private static $errors_dictionary;
     private $http_status;
@@ -19,7 +19,7 @@ class ApiException extends Exception {
      *                                  Note that message can hold placeholders to be replaced by
      *                                  $message_args in constructor.
      */
-    public static function set_errors_dictionary(Array &$errors_dictionary)
+    public static function setErrorsDictionary(Array &$errors_dictionary)
     {
         self::$errors_dictionary = $errors_dictionary;
     }
