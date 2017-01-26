@@ -5,7 +5,7 @@ It holds exception data that application should manage to build the response.
  
 # How to use it
     
-    //At some point in the begining
+    //At some point in the beginning
     \GsiTools\ApiException::setErrorDictionary($app_errors_dictionary);
     
     try
